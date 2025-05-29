@@ -1,0 +1,278 @@
+@import url('https://fonts.googleapis.com/css2?family=Oswald:wght@200..700&family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&family=Roboto+Condensed:ital,wght@0,100..900;1,100..900&family=Share+Tech&family=Teko:wght@300..700&display=swap');
+
+@import "tailwindcss";
+
+body {
+  font-family: "Oswald", sans-serif;
+  font-optical-sizing: auto;
+  font-weight: 500;
+  font-style: normal;
+  height: 100%;
+  overflow-x: hidden;
+}
+
+.swiper-pagination {
+  display: none !important;
+}
+
+/* Main Container - The light blue background */
+.flower-shop-container {
+  background-color: #e0f2f7; /* Light blue background as in image */
+  padding: 20px; /* Padding around the white content area */
+  min-height: 100vh; /* Full viewport height */
+  display: flex;
+  justify-content: center;
+  align-items: flex-start; /* Align content to the top */
+}
+
+/* Content Wrapper - The white background area */
+.content-wrapper {
+  background-color: #ffffff;
+  border-radius: 10px; /* Slightly rounded corners */
+  box-shadow: 0 5px 15px rgba(0, 0, 0, 0.1); /* Subtle shadow */
+  padding: 30px;
+  max-width: 1200px; /* Max width to match your image */
+  width: 100%;
+}
+
+/* Header Section */
+.shop-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-bottom: 40px; /* Space between header and product grid */
+  padding-bottom: 20px;
+  border-bottom: 1px solid #f0f0f0; /* Light separator line */
+}
+
+.header-title {
+  font-size: 2.5em;
+  font-weight: 600;
+  color: #333;
+  margin: 0;
+}
+
+/* Category Navigation Buttons */
+.category-nav {
+  display: flex;
+  gap: 15px; /* Space between buttons */
+}
+
+.nav-button {
+  background-color: #e9f5f9; /* Light background for inactive */
+  color: #007bff; /* Blue text for inactive */
+  border: 1px solid #b3e0ff; /* Light blue border */
+  padding: 10px 20px;
+  border-radius: 25px; /* Pill shape */
+  cursor: pointer;
+  font-size: 1em;
+  font-weight: 500;
+  transition: background-color 0.3s ease, color 0.3s ease, border-color 0.3s ease;
+  white-space: nowrap; /* Prevent wrapping */
+}
+
+.nav-button:hover {
+  background-color: #d1effa;
+}
+
+.nav-button.active {
+  background-color: #007bff; /* Blue background for active */
+  color: white;
+  border-color: #007bff;
+}
+
+/* Product Grid */
+.products-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(280px, 1fr)); /* Adjusted size for cards */
+  gap: 30px; /* Gap between cards */
+}
+
+.no-products-message {
+  text-align: center;
+  grid-column: 1 / -1; /* Center message in the grid */
+  font-size: 1.2em;
+  color: #666;
+}
+
+/* Product Card Styling */
+.product-card {
+  background-color: #ffffff;
+  border-radius: 10px;
+  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.08); /* More prominent shadow for cards */
+  overflow: hidden;
+  display: flex;
+  flex-direction: column;
+  transition: transform 0.2s ease-in-out;
+}
+
+.product-card:hover {
+  transform: translateY(-5px);
+}
+
+.product-image-area {
+  position: relative;
+  width: 100%;
+  height: 220px; /* Fixed height for images */
+  overflow: hidden;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  background-color: #f8f8f8; /* Light background for image area */
+}
+
+.product-image {
+  width: 100%; /* Fill the image area */
+  height: 100%;
+  object-fit: cover; /* Cover the area, cropping if necessary */
+  display: block;
+}
+
+.timer-overlay {
+  position: absolute;
+  top: 10px; /* Adjusted position to match image */
+  left: 10px;
+  background-color: #495057; /* Dark grey background */
+  color: white;
+  padding: 5px 10px;
+  border-radius: 5px;
+  font-size: 0.85em;
+  font-weight: 600;
+  display: flex;
+  align-items: center;
+  gap: 5px;
+}
+
+.timer-overlay span {
+    vertical-align: middle;
+}
+
+
+.product-info {
+  padding: 15px 20px; /* Padding inside the card content */
+  display: flex;
+  flex-direction: column;
+  flex-grow: 1;
+}
+
+.product-title {
+  font-size: 1.15em;
+  font-weight: 600;
+  color: #333;
+  margin: 0 0 8px 0; /* Space below title */
+  text-align: left; /* Aligned to left */
+}
+
+.product-rating {
+  margin-bottom: 10px;
+  text-align: left; /* Aligned to left */
+}
+
+.star-filled {
+  color: #ffc107; /* Gold color for filled stars */
+  font-size: 1.2em;
+}
+
+.star-empty {
+  color: #e4e5e9; /* Light grey for empty stars */
+  font-size: 1.2em;
+}
+
+.product-prices {
+  display: flex;
+  align-items: baseline;
+  gap: 10px; /* Space between current and old price */
+  margin-top: auto; /* Pushes prices and button to bottom */
+  margin-bottom: 15px; /* Space above button */
+}
+
+.current-price {
+  font-size: 1.4em;
+  font-weight: bold;
+  color: #28a745; /* Green color from the image */
+}
+
+.old-price {
+  font-size: 1em;
+  color: #888;
+  text-decoration: line-through;
+}
+
+.add-to-cart-button {
+  background-color: #007bff; /* Blue button */
+  color: white;
+  padding: 12px 0px; /* Adjust padding for full width button */
+  border: none;
+  border-radius: 5px;
+  cursor: pointer;
+  font-size: 1em;
+  font-weight: bold;
+  transition: background-color 0.3s ease;
+  width: 100%; /* Full width button */
+  text-align: center;
+}
+
+.add-to-cart-button:hover {
+  background-color: #0056b3;
+}
+
+.add-to-cart-button:disabled {
+  background-color: #6c757d;
+  cursor: not-allowed;
+}
+
+/* Responsive Adjustments */
+@media (max-width: 992px) {
+  .header-title {
+    font-size: 2em;
+  }
+  .nav-button {
+    padding: 8px 15px;
+    font-size: 0.9em;
+  }
+  .products-grid {
+    grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+    gap: 20px;
+  }
+}
+
+@media (max-width: 768px) {
+  .shop-header {
+    flex-direction: column;
+    align-items: flex-start; /* Align items to left in column layout */
+    text-align: left;
+  }
+
+  .header-title {
+    font-size: 2em;
+    margin-bottom: 20px; /* Space below title when stacked */
+  }
+
+  .category-nav {
+    flex-wrap: wrap; /* Allow buttons to wrap */
+    gap: 10px;
+    justify-content: center; /* Center buttons when wrapped */
+    width: 100%;
+  }
+
+  .products-grid {
+    grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+  }
+}
+
+@media (max-width: 576px) {
+  .content-wrapper {
+    padding: 20px;
+  }
+  .products-grid {
+    grid-template-columns: 1fr; /* Single column on very small screens */
+    gap: 20px;
+  }
+  .header-title {
+    font-size: 1.8em;
+  }
+  .nav-button {
+    font-size: 0.8em;
+    padding: 8px 12px;
+  }
+}
