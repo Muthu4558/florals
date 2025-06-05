@@ -18,7 +18,7 @@ const Footer = () => {
             <div className="flex flex-col md:flex-row justify-between gap-10">
                 {/* Left - Newsletter */}
                 <div className="md:w-1/3">
-                    <h2 className="text-sm uppercase tracking-wider font-semibold mb-2 text-white/70">Ushaa florals</h2>
+                    <h2 className="text-sm uppercase tracking-wider font-semibold mb-2 text-white/70">Florals</h2>
                     <h3 className="text-3xl font-bold leading-tight">
                         Subscribe newsletter and <br /> get <span className="text-yellow-300">-20% off</span>
                     </h3>
@@ -92,10 +92,10 @@ const Footer = () => {
             {/* Bottom Row: Address and Copyright */}
             <div className="mt-10 text-sm text-white/80 border-t border-white/30 pt-4 flex flex-col md:flex-row justify-between items-center gap-2">
                 <div>
-                    © 2025, <span className="font-semibold text-white">Flowers WorkDo</span>, Powered by WorkDo.io
+                    © 2025, All Rights Reserverd
                 </div>
                 <div className="text-center md:text-right">
-                    Address: Landmark: VR, No. 162/5 Mangalam Colony, Anna Nagar, Jawaharlal Nehru Rd, VR, Anna Nagar, Chennai, Tamil Nadu 600040
+                    Address: Landmark: No. 162/5, Anna Nagar, Chennai, Tamil Nadu 600040
                 </div>
             </div>
         </footer>

@@ -1,6 +1,6 @@
 import React, { useState } from 'react';
 import { FaShoppingCart } from 'react-icons/fa';
-import { ChevronRight } from 'lucide-react';
+import { ChevronRight, Heart } from 'lucide-react';
 import { Swiper, SwiperSlide } from 'swiper/react';
 import { Navigation, Pagination, Autoplay } from 'swiper/modules';
 import 'swiper/css';
@@ -19,7 +19,7 @@ const productData = [
         price: 950,
         brand: 'KaBloom',
         oldPrice: 1400,
-        image: 'https://i.ibb.co/zSJYwDK/flower1.png',
+        image: 'https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQyifTlwy1o4_mcPJ4yc_7e6uhgV5eZHIWxHw&s',
         category: 'Flowers in flowerpots',
         soldOut: false,
     },
@@ -29,7 +29,7 @@ const productData = [
         price: 970,
         brand: 'KaBloom',
         oldPrice: 1400,
-        image: 'https://i.ibb.co/zSJYwDK/flower1.png',
+        image: 'https://www.themaevastore.com/cdn/shop/files/Web_0007_Floral_pot.jpg?v=1737020960',
         category: 'Flowers in flowerpots',
         soldOut: false,
     },
@@ -39,7 +39,7 @@ const productData = [
         price: 880,
         brand: 'KaBloom',
         oldPrice: 1400,
-        image: 'https://i.ibb.co/zSJYwDK/flower1.png',
+        image: 'https://i.etsystatic.com/24074578/r/il/6159a8/2621931468/il_fullxfull.2621931468_68q1.jpg',
         category: 'Flowers in flowerpots',
         soldOut: false,
     },
@@ -49,7 +49,7 @@ const productData = [
         price: 920,
         brand: 'KaBloom',
         oldPrice: 1400,
-        image: 'https://i.ibb.co/zSJYwDK/flower1.png',
+        image: 'https://m.media-amazon.com/images/I/41U3niZSTNL._AC_.jpg',
         category: 'Flowers in flowerpots',
         soldOut: false,
     },
@@ -58,7 +58,7 @@ const productData = [
         title: 'Out of Stock Bloom',
         price: 1100,
         brand: 'KaBloom',
-        image: 'https://i.ibb.co/zSJYwDK/flower1.png',
+        image: 'https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQ_RQNtfc6n50SEpZwA7bOdxfRw23aDF7wo3A&s',
         category: 'Flowers in flowerpots',
         soldOut: true,
     },
@@ -68,7 +68,7 @@ const productData = [
         price: 1350,
         brand: 'Yiliyajia',
         oldPrice: 1800,
-        image: 'https://i.ibb.co/pPL2dXp/flower2.png',
+        image: 'https://cdn11.bigcommerce.com/s-3bp5t46z/images/stencil/586x586/products/599/2622/DSC_5311__28777.1644927017.jpg?c=2',
         category: 'Bouquetes',
         soldOut: false,
     },
@@ -78,7 +78,7 @@ const productData = [
         price: 1380,
         brand: 'Yiliyajia',
         oldPrice: 1800,
-        image: 'https://i.ibb.co/pPL2dXp/flower2.png',
+        image: 'https://image.floranext.com/instances/theartfloral_com/catalog/product/0/f/0fa63971c3efb39ca4080a640277b7e9_1.png.webp?h=800&w=800&r=255&g=255&b=255',
         category: 'Bouquetes',
         soldOut: false,
     },
@@ -88,7 +88,7 @@ const productData = [
         price: 1420,
         brand: 'Yiliyajia',
         oldPrice: 1800,
-        image: 'https://i.ibb.co/pPL2dXp/flower2.png',
+        image: 'https://fiftyflowers.com/cdn/shop/products/Warm-Wishes-Wholesale-centerpiece-in-vase_17_10405_l.jpg?v=1683166324&width=480',
         category: 'Bouquetes',
         soldOut: false,
     },
@@ -98,7 +98,7 @@ const productData = [
         price: 1450,
         brand: 'Yiliyajia',
         oldPrice: 1800,
-        image: 'https://i.ibb.co/pPL2dXp/flower2.png',
+        image: 'https://www.longacres.co.uk/Images/Product/Default/xlarge/mothers-day-pink-carnation-and-berry-handtied-flower-bouquet-0.jpg',
         category: 'Bouquetes',
         soldOut: false,
     },
@@ -108,7 +108,7 @@ const productData = [
         price: 1430,
         brand: 'Yiliyajia',
         oldPrice: 1800,
-        image: 'https://i.ibb.co/pPL2dXp/flower2.png',
+        image: 'https://cdn.flowersnfruits.com/uploads/product/flowers_n_fruits/OCT2024/1728455015356-BouquetofPinkLilies.webp',
         category: 'Bouquetes',
         soldOut: false,
     },
@@ -117,121 +117,15 @@ const productData = [
         title: 'Out of Stock Lily',
         price: 1500,
         brand: 'Yiliyajia',
-        image: 'https://i.ibb.co/pPL2dXp/flower2.png',
+        image: 'https://m.media-amazon.com/images/I/61TzAoOMs9L._AC_UF894,1000_QL80_.jpg',
         category: 'Bouquetes',
         soldOut: true,
-    },
-    {
-        id: 12,
-        title: 'Rose Garden Freshness',
-        price: 1550,
-        brand: 'KaBloom',
-        oldPrice: 2000,
-        image: 'https://i.ibb.co/Xj6bfz0/flower3.png',
-        category: 'Cut Flowers',
-        soldOut: false,
-    },
-    {
-        id: 13,
-        title: 'Rose Blush Cut Set',
-        price: 1580,
-        brand: 'KaBloom',
-        oldPrice: 2000,
-        image: 'https://i.ibb.co/Xj6bfz0/flower3.png',
-        category: 'Cut Flowers',
-        soldOut: false,
-    },
-    {
-        id: 14,
-        title: 'Crimson Rose Cut',
-        price: 1620,
-        brand: 'KaBloom',
-        oldPrice: 2000,
-        image: 'https://i.ibb.co/Xj6bfz0/flower3.png',
-        category: 'Cut Flowers',
-        soldOut: false,
-    },
-    {
-        id: 15,
-        title: 'Velvet Red Rose',
-        price: 1590,
-        brand: 'KaBloom',
-        oldPrice: 2000,
-        image: 'https://i.ibb.co/Xj6bfz0/flower3.png',
-        category: 'Cut Flowers',
-        soldOut: false,
-    },
-    {
-        id: 16,
-        title: 'Garden Charm Roses',
-        price: 1570,
-        brand: 'KaBloom',
-        oldPrice: 2000,
-        image: 'https://i.ibb.co/Xj6bfz0/flower3.png',
-        category: 'Cut Flowers',
-        soldOut: false,
-    },
-    {
-        id: 17,
-        title: 'Out of Stock Rose',
-        price: 1650,
-        brand: 'KaBloom',
-        image: 'https://i.ibb.co/Xj6bfz0/flower3.png',
-        category: 'Cut Flowers',
-        soldOut: true,
-    },
-    {
-        id: 18,
-        title: 'Silken Petal Spray',
-        price: 1750,
-        brand: 'Yiliyajia',
-        image: 'https://i.ibb.co/hmg2SY9/flower4.png',
-        category: 'Bestsellers',
-        soldOut: false,
-    },
-    {
-        id: 19,
-        title: 'Bloom Art Deco',
-        price: 1790,
-        brand: 'Yiliyajia',
-        image: 'https://i.ibb.co/hmg2SY9/flower4.png',
-        category: 'Bestsellers',
-        soldOut: false,
-    },
-    {
-        id: 20,
-        title: 'Classic Silk Collection',
-        price: 1810,
-        brand: 'Yiliyajia',
-        image: 'https://i.ibb.co/hmg2SY9/flower4.png',
-        category: 'Bestsellers',
-        soldOut: false,
-    },
-    {
-        id: 21,
-        title: 'Elegant Bloom Set',
-        price: 1830,
-        brand: 'Yiliyajia',
-        image: 'https://i.ibb.co/hmg2SY9/flower4.png',
-        category: 'Bestsellers',
-        soldOut: false,
-    },
-    {
-        id: 22,
-        title: 'Out of Stock Silk',
-        price: 1900,
-        brand: 'Yiliyajia',
-        image: 'https://i.ibb.co/hmg2SY9/flower4.png',
-        category: 'Bestsellers',
-        soldOut: true,
-    },
+    }
 ];
 
 const categories = [
     'Bouquetes',
-    'Cut Flowers',
     'Flowers in flowerpots',
-    'Bestsellers',
 ];
 
 const HomeProduct = () => {
@@ -296,7 +190,7 @@ const HomeProduct = () => {
                             <SwiperSlide key={product.id}>
                                 <div className="relative bg-white rounded-2xl overflow-hidden shadow-lg hover:shadow-2xl transition-shadow duration-300 text-center p-5 h-full flex flex-col justify-between">
                                     <div className="absolute top-3 right-3 bg-pink-600 p-2 rounded-full shadow text-white">
-                                        <a href="#"><FaShoppingCart size={16} /></a>
+                                        <a href="#"><Heart size={16} /></a>
                                     </div>
                                     <img
                                         src={product.image}

@@ -1,8 +1,11 @@
+import React from 'react';
+import { Link } from 'react-router-dom';
 import bg2 from '../assets/Background/bg-2.png';
-import flower1 from '../assets/flowers/f1.jpg';
-import flower2 from '../assets/flowers/f2.jpg';
-import flower3 from '../assets/flowers/f3.jpg';
-import flower4 from '../assets/flowers/f4.jpg';
+import flower1 from '../assets/flowers/f1.png';
+import flower2 from '../assets/flowers/f2.png';
+import flower3 from '../assets/flowers/f3.png';
+import flower4 from '../assets/flowers/f4.png';
+import flower5 from '../assets/flowers/f5.png';
 
 import { Swiper, SwiperSlide } from 'swiper/react';
 import { Navigation, Pagination, Autoplay } from 'swiper/modules';
@@ -10,14 +13,14 @@ import 'swiper/css';
 import 'swiper/css/navigation';
 import 'swiper/css/pagination';
 
-import { ChevronRight, ShoppingCart } from 'lucide-react';
+import { ChevronRight } from 'lucide-react';
 
 const flowerData = [
     { image: flower1, title: 'Bestsellers' },
     { image: flower2, title: 'Bouquetes' },
     { image: flower3, title: 'Cut Flowers' },
     { image: flower4, title: 'Flowerpots' },
-    { image: flower4, title: 'Flowerpots' },
+    { image: flower5, title: 'Flowers' },
 ];
 
 const Discovering = () => {
@@ -62,15 +65,6 @@ const Discovering = () => {
                     {flowerData.map((flower, idx) => (
                         <SwiperSlide key={idx}>
                             <div className="bg-white rounded-xl shadow-lg flex flex-col items-center p-6 w-full h-full relative hover:shadow-2xl transition-shadow duration-300">
-                                {/* Cart icon top right */}
-                                {/* <button
-                                    type="button"
-                                    aria-label="Add to Cart"
-                                    className="absolute top-4 right-4 bg-pink-100 text-pink-600 p-2 rounded-full shadow hover:bg-pink-200 transition-colors"
-                                >
-                                    <ShoppingCart className="w-5 h-5" />
-                                </button> */}
-
                                 <img
                                     src={flower.image}
                                     alt={flower.title}
@@ -81,19 +75,18 @@ const Discovering = () => {
                                 </p>
                                 <h3 className="text-xl font-semibold mb-6">{flower.title}</h3>
 
-                                {/* Show Products as text only */}
-                                <p className="text-pink-600 font-semibold text-sm flex items-center justify-center gap-2 cursor-pointer select-none">
+                                {/* Show Products as clickable Link */}
+                                <Link
+                                    to={`/product`}
+                                    className="text-pink-600 font-semibold text-sm flex items-center justify-center gap-2 cursor-pointer select-none hover:underline"
+                                >
                                     Show Products <ChevronRight className="w-4 h-4" />
-                                </p>
+                                </Link>
                             </div>
                         </SwiperSlide>
                     ))}
                 </Swiper>
 
-                {/* Custom Navigation Buttons */}
-                {/* Swiper component here */}
-
-                {/* Navigation Buttons Container */}
                 <div className="flex justify-end gap-4 mt-4 max-w-6xl mx-auto px-6">
                     <button
                         aria-label="Previous"
@@ -108,7 +101,6 @@ const Discovering = () => {
                         <ChevronRight className="w-6 h-6" />
                     </button>
                 </div>
-
             </div>
         </div>
     );
